@@ -1,0 +1,109 @@
+@import "variables";
+
+@mixin interactiveTextMobile {
+  #interactive-text {
+    text-align: center;
+    p {
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@mixin interactiveTextDesktop {
+  #interactive-text {
+    text-align: left;
+    width: 40%;
+    position: relative;
+    right: -55%;
+    top: -350px;
+    z-index: 2;
+    background-color: $white;
+    h2 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+@mixin firstSectionMobile() {
+  #firstSection {
+    padding: 12.5vh 0;
+    text-align: center;
+    height: 900px;
+    #interactive-mobile {
+      width: 85%;
+    }
+  }
+}
+
+@mixin firstSectionDesktop() {
+  #firstSection {
+    padding: 10%;
+    #interactive-desktop {
+      width: 70%;
+      z-index: -1;
+    }
+    height: 900px;
+  }
+}
+
+@mixin headerTextDesktop($fontSize, $width) {
+  #header-text-desktop {
+    margin-left: 10%;
+    width: $width;
+    height: 50%;
+    font-size: $fontSize;
+    bottom: 0vh;
+  }
+}
+
+@mixin headerTextMobile($fontSize, $width) {
+  #header-text-mobile {
+    margin-left: 2rem;
+    width: $width;
+    font-size: $fontSize;
+    top: 14rem;
+  }
+}
+
+@mixin gridDesign(
+  $columnNumber,
+  $fontSize,
+  $left,
+  $bottom,
+  $columnWidth,
+  $elementWidth,
+  $elementHeight
+) {
+  display: grid;
+  grid-template-columns: repeat($columnNumber, $columnWidth);
+  gap: 15px;
+  .gridElement p {
+    position: absolute;
+    font-family: $monsterrat;
+    color: $white;
+    left: $left;
+    font-size: $fontSize;
+    bottom: $bottom;
+  }
+  .gridElement {
+    position: relative;
+    width: $elementWidth;
+    height: $elementHeight;
+    cursor: pointer;
+  }
+  .gridElement:hover {
+    img {
+      opacity: 0.3;
+    }
+    p {
+      font-weight: bolder;
+      color: black;
+    }
+  }
+}

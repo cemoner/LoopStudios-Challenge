@@ -1,0 +1,329 @@
+@import "global";
+@import "variables";
+@import "mixins";
+
+body {
+  header {
+    .flexNav {
+      position: relative;
+      background-color: $black;
+    }
+    #header-text-mobile,
+    #header-text-desktop {
+      position: absolute;
+      border: solid;
+      border-color: $white;
+      color: $white;
+      font-family: $josefin;
+      padding: 2.5%;
+    }
+    #mobileNav {
+      position: absolute;
+      width: 100%;
+      top: 12.5rem;
+      display: none;
+      a {
+        text-decoration: none;
+        font-size: 2.25rem;
+        font-family: $josefin;
+        width: 8rem;
+        display: block;
+        color: $white;
+        margin-left: 2rem;
+      }
+      a:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+    .flex {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      align-items: center;
+      width: 100%;
+      top: 0px;
+
+      .header_links a {
+        text-decoration: none;
+        color: $white;
+        font-size: 1.3rem;
+        font-family: $josefin;
+        border-bottom: solid transparent;
+        transition: 0.5s border-color ease-out;
+      }
+      a:not(:nth-child(5)) {
+        margin-right: 15px;
+      }
+      .header_links a:hover {
+        transform-origin: left;
+        border-bottom: solid white;
+        border-width: 2.5px;
+      }
+      .header_links,
+      #logo,
+      #hamburger-menu {
+        margin-top: 3%;
+        padding: 0 0.3rem;
+      }
+      .header_links {
+        margin-right: 9.5%;
+      }
+    }
+    #desktop-hero {
+      width: 100%;
+    }
+    #mobile-hero {
+      width: 100%;
+    }
+    #hamburger-menu {
+      background-color: transparent;
+      border: none;
+      margin-right: 5%;
+      cursor: pointer;
+    }
+  }
+  #secondSection {
+    display: flex;
+    justify-content: center;
+  }
+}
+// grid mobile
+#gridMobile {
+  @include gridDesign(1, 25px, 20px, 0px, 375px, auto, 140px);
+  img {
+    width: 370px;
+  }
+  margin: auto;
+  text-align: center;
+}
+
+#creationMobile {
+  font-family: $monsterrat;
+  font-size: 40px;
+  width: 375px;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: bolder;
+}
+
+#seeAllMobile {
+  font-size: 20px;
+  text-align: center;
+  background-color: transparent;
+  padding: 15px 4.2rem;
+  margin-left: 80px;
+  cursor: pointer;
+  word-spacing: 10px;
+  margin-top: 25px;
+  font-family: $monsterrat;
+  font-weight: bolder;
+  &:hover {
+    background-color: black;
+    color: $white;
+  }
+}
+
+// end of grid mobile
+
+// Desktop Photos made with Grid
+#gridDesktop {
+  @include gridDesign(4, 35px, 30px, 0px, 284px, 260px, 453px);
+}
+#ourCreationsDesktop {
+  width: 1155px;
+  display: flex;
+  justify-content: space-between;
+  #creationDesktop {
+    font-family: $monsterrat;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  #seeAllDesktop {
+    border: solid 1px;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+    background: transparent;
+    cursor: pointer;
+    font-family: $monsterrat;
+    word-spacing: 10px;
+    font-size: 15px;
+    color: black;
+    font-weight: 800;
+  }
+  #seeAllDesktop:hover {
+    background-color: black;
+    color: $white;
+  }
+}
+#flexContainerDesktop {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: -15px;
+  margin-bottom: 75px;
+}
+// end of grid desktop
+
+// footer Desktop
+
+#footerDesktop {
+  background-color: $black;
+  height: 175px;
+  margin-top: 200px;
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: 40% 60%;
+  #firstRowDesktop {
+    display: flex;
+    grid-column-start: 2;
+    grid-column-end: 15;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 85%;
+    #smIconsDesktop {
+      a:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+  }
+  #secondRowDesktop {
+    display: flex;
+    grid-column-start: 2;
+    grid-column-end: 15;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 85%;
+    #footerMenuDesktop {
+      a {
+        color: $white;
+        font-family: $josefin;
+        font-size: 1.2rem;
+        text-decoration: none;
+        border-bottom: solid transparent;
+        transition: 0.3s border-color ease-in;
+      }
+      a:not(:last-child) {
+        margin-right: 30px;
+      }
+      a:hover {
+        transform-origin: left;
+        border-bottom: solid white;
+      }
+    }
+  }
+  #secondRowTextDesktop {
+    color: $veryDarkGray;
+    font-family: $josefin;
+  }
+}
+// end of footer desktop
+
+// footer mobile
+
+#footerMobile {
+  margin-top: 100px;
+  background-color: black;
+  height: 550px;
+  text-align: center;
+  #logoFooterMobile {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+  .mobileFooterMenu {
+    border: solid;
+    a {
+      color: $white;
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-family: $josefin;
+    }
+    &:not(:nth-child(6)) {
+      margin-bottom: 1.35rem;
+    }
+  }
+  #iconsMobile {
+    margin-top: 4rem;
+    a {
+      height: 1.75rem;
+      display: inline-block;
+      img {
+        height: 1.75rem;
+      }
+      &:not(:last-child) {
+        margin-right: 0.95rem;
+      }
+    }
+  }
+  #footerEndTextMobile {
+    margin-top: 1.5rem;
+    font-family: $josefin;
+    color: $darkGray;
+  }
+}
+
+// end of footer mobile
+
+#interactive-text {
+  padding: 5%;
+  h2 {
+    font-family: $josefin;
+    font-weight: 400;
+    color: $darkGray;
+  }
+  p {
+    font-weight: lighter;
+    font-family: $josefin;
+    color: rgb(0, 0, 0);
+  }
+}
+
+.opened {
+  font-size: inherit;
+}
+
+@media screen and (max-width: 1024px) {
+  #desktop-hero,
+  .header_links,
+  #interactive-desktop,
+  #header-text-desktop,
+  #gridDesktop,
+  #flexContainerDesktop,
+  #footerDesktop {
+    display: none;
+  }
+  #logo {
+    margin-left: 6%;
+  }
+  #containerAll {
+    margin: auto;
+    width: 375px;
+  }
+  @include headerTextMobile(40px, 85%);
+  @include interactiveTextMobile();
+  @include firstSectionMobile();
+}
+
+@media screen and (min-width: 1025px) {
+  #mobile-hero,
+  #hamburger-menu,
+  #interactive-mobile,
+  #header-text-mobile,
+  #gridMobile,
+  #creationMobile,
+  #seeAllMobile,
+  #footerMobile {
+    display: none !important;
+  }
+  #logo {
+    margin-left: 10%;
+  }
+  #containerAll {
+    margin: auto;
+    width: 1440px;
+  }
+  @include interactiveTextDesktop();
+  @include firstSectionDesktop();
+  @include headerTextDesktop(70px, 50%);
+}

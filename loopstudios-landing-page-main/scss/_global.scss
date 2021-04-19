@@ -1,0 +1,21 @@
+@import "variables";
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+// font-family: 'Alata', sans-serif;
+// font-family: 'Josefin Sans', sans-serif;
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  font-size: $fontSize;
+}
